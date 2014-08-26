@@ -1,4 +1,6 @@
 
+library(shiny)
+
 shinyUI(fluidPage(
   
   titlePanel(img(src="ibest_logo.jpg", align="center")),
