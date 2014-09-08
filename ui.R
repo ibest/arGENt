@@ -1,10 +1,9 @@
 #this script is running on bioinfo-mite currently, most updated version
 
-bcds <- read.table("/home/alida/Documents/Idaho/R/sample_sheet/toposheet/grc.barcodes.csv", header=T,
-                   stringsAsFactors=F)
-bcd.name <- (bcds$grc.name)
-
 library(shiny)
+
+bcds <- read.table("grc.barcodes.csv", col.names=T, stringsAsFactors=F)
+bcd.name <- (bcds)
 
 shinyUI(fluidPage(
   

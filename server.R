@@ -39,8 +39,8 @@ today.date <- format(date.input, format="%D")
 datasetInput <- reactive({
   c("[Header]", "IEMFileVersion,4", paste("Investigator Name", input$Name, sep=","), 
     paste("Experiment Name", input$ProjID, sep=","), paste("Date", today.date, sep=","), "Workflow,GenerateFASTQ", 
-    "Application", paste("Assay", input$Assay, sep=","), "Description", "Chemistry,Default", "", 
-    "[Reads]", sequences(x), "",
+    "Application", paste("Assay", input$Assay, sep=","), paste("Description,", today.date, input$Name, input$ProjID, sep=""), 
+    "Chemistry,Default", "", "[Reads]", sequences(x), "",
     "[Settings]", "ReverseComplement,0", "", "[Data]", c("Sample_ID,Sample_Name,Sample_Plate,Sample_Well,I7_Index_ID,index,Sample_Project,Description"),
   c(paste(input$Sample_ID1, input$Sample_ID1, ",,", input$Index1, input$ProjID, input$ProjID, sep=","))
   )})
