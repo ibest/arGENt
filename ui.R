@@ -34,35 +34,68 @@ shinyUI(fluidPage(
               choices = list("50", "75", "100", "150", "200", "300"), 
               selected = 1),
   br(),
-
+  checkboxInput("DBC", label = h4("Check box for double barcodes")),
+  br(),
   numericInput("Samples", label = h5("Input the number of samples for
                                      sequencing:"), value = NA, step=NA),
   br(),
   br(),
   br(),
   wellPanel(textInput("Sample_ID1", label = h5("Enter sample 1 name")),
-            selectInput("Index1", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index1", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index1", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID2", label = h5("Enter sample 2 name")),
-            selectInput("Index2", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index2", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index2", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID3", label = h5("Enter sample 3 name")),
-            selectInput("Index3", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index3", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index3", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID4", label = h5("Enter sample 4 name")),
-            selectInput("Index4", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index4", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index4", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID5", label = h5("Enter sample 5 name")),
-            selectInput("Index5", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index5", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index5", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID6", label = h5("Enter sample 6 name")),
-            selectInput("Index6", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index6", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index6", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID7", label = h5("Enter sample 7 name")),
-            selectInput("Index7", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index7", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index7", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID8", label = h5("Enter sample 8 name")),
-            selectInput("Index8", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index8", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index8", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID9", label = h5("Enter sample 9 name")),
-            selectInput("Index9", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index9", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index9", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
   wellPanel(textInput("Sample_ID10", label = h5("Enter sample 10 name")),
-            selectInput("Index10", label = h5("Select I7 indexing barcode"), choices = bcd.name)),
+            selectInput("Index10", label = h5("Select I7 indexing barcode"), choices = bcd.name),
+            conditionalPanel(
+              condition = "input.DBC==true",
+              selectInput("I5Index10", label = h5("Select I5 indexing barcode"), choices = bcd.name))),
+  br(),
+  paste("Double-check all barcode assignments!"),
   br(),
   br(),
-  downloadButton("downloadData", "Download the submission sheet"),
+  downloadButton("downloadData", label=h5("Download the submission sheet")),
   hr()
                 )
 
