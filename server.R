@@ -1,6 +1,10 @@
-#this script is running on bioinfo-mite currently, most updated version
+#this script is running on bioinfo-mite currently: unsure of whether or not to integrate a dynamic user input for number of samples due to issues with keeping and exporting that information, so keeping it static for now
 
 library(shiny)
+bcds.p7 <- read.table("barcode_p7_lookup.txt", col.names=F, stringsAsFactors=F, sep=",")
+bcds.p5 <- read.table("barcode_p5_lookup.txt", col.names=F, stringsAsFactors=F, sep=",")
+bcd_p7 <- (bcds.p7)
+bcd_p5 <- (bcds.p5)
 
 shinyServer(function(input, output) {
   
@@ -31,7 +35,7 @@ shinyServer(function(input, output) {
     else if (x != "Single-end")
       print(c(input$Length, input$Length), sep="")
   }
-
+  
 date.input <- Sys.Date()
 today.date <- format(date.input, format="%D")
   
@@ -39,10 +43,10 @@ today.date <- format(date.input, format="%D")
 datasetInput <- reactive({
   c("[Header]", "IEMFileVersion,4", paste("Investigator Name", input$Name, sep=","), 
     paste("Experiment Name", input$ProjID, sep=","), paste("Date", today.date, sep=","), "Workflow,GenerateFASTQ", 
-    "Application", paste("Assay", input$Assay, sep=","), paste("Description,", today.date, input$Name, input$ProjID, sep=""), 
+    "Application,FASTQ Only", paste("Assay", input$Assay, sep=","), paste("Description,", today.date, input$Name, input$ProjID, sep=""), 
     "Chemistry,Default", "", "[Reads]", sequences(x), "",
     "[Settings]", "ReverseComplement,0", "", "[Data]", c("Sample_ID,Sample_Name,Sample_Plate,Sample_Well,I7_Index_ID,index,Sample_Project,Description"),
-  c(paste(input$Sample_ID1, input$Sample_ID1, ",,", input$Index1, input$ProjID, input$ProjID, sep=","))
+  c(paste(input$Sample_ID1, input$Sample_ID1, ",", input$Index1, input$ProjID, input$ProjID, sep=","))
   )})
 
 
