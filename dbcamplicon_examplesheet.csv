@@ -1,0 +1,12 @@
+SampleID,PrimerPairID,BarcodeID,ProjectID
+Sample1,16S,Alpha1,PI_lastname/researcher_lastname
+Sample2,16S,Alpha2,PI_lastname/researcher_lastname
+Sample3,16S,Alpha3,PI_lastname/researcher_lastname
+Sample4,16S,Alpha4,PI_lastname/researcher_lastname
+Sample5,16S,Alpha5,PI_lastname/researcher_lastname
+Sample6,16S,Alpha6,PI_lastname/researcher_lastname
+Sample7,16S,Alpha7,PI_lastname/researcher_lastname
+Sample8,16S,Alpha8,PI_lastname/researcher_lastname
+Sample9,16S,Alpha9,PI_lastname/researcher_lastname
+Sample10,16S,Alpha10,PI_lastname/researcher_lastname
+
