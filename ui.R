@@ -15,13 +15,16 @@ shinyUI(fluidPage(
                 accept=c(".csv")),
       numericInput("obs", 
                    "Number of lines to view:",
-                   10)
+                   10),
+      br(),
+      br(),
+      downloadButton('abcBarcodes', "Download the GRC barcode lookup sheets.")
     ),
     
     mainPanel(
       tabsetPanel(
-        tabPanel("Shotgun Sequencing", value = 1, tableOutput("sg"), helpText("Follow the format listed")),
-        tabPanel("Amplicon Sequencing", value = 2, tableOutput("amp"), helpText("The Barcode IDs are provided by the GRC; refer to the barcode lookup tables to determine the appropriate IDs.")), id = 1),
+        tabPanel("Shotgun Sequencing", value = 1, tableOutput("sg"), helpText("Follow the above format when generating your sample sheet.")),
+        tabPanel("Amplicon Sequencing", value = 2, tableOutput("amp"), helpText("The Barcode IDs are dual-indexes provided by the GRC in 96-well plate layout; the barcode ID corresponds to its location on the plate.")), id = 1),
       verbatimTextOutput('out1'),
       tableOutput('contents')
     )
