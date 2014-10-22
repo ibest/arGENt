@@ -1,12 +1,11 @@
-SampleID,PrimerPairID,BarcodeID,ProjectID
-Sample1,-,N001,PI_lastname/researcher_lastname
-Sample2,-,N002,PI_lastname/researcher_lastname
-Sample3,-,N003,PI_lastname/researcher_lastname
-Sample4,-,N004,PI_lastname/researcher_lastname
-Sample5,-,N005,PI_lastname/researcher_lastname
-Sample6,-,N006,PI_lastname/researcher_lastname
-Sample7,-,N007,PI_lastname/researcher_lastname
-Sample8,-,N008,PI_lastname/researcher_lastname
-Sample9,-,N009,PI_lastname/researcher_lastname
-Sample10,-,N010,PI_lastname/researcher_lastname
-
+Sample ID,Barcode ID,Barcode Sequence,Sample Volume uL,Concentration ng/uL,Project ID
+Sample1,N001,TAGATCGC,20,15,PI_lastname/researcher_lastname
+Sample2,N002,CTCTCTAT,20,15,PI_lastname/researcher_lastname
+Sample3,N003,TATCCTCT,20,15,PI_lastname/researcher_lastname
+Sample4,N004,AGAGTAGA,20,10,PI_lastname/researcher_lastname
+Sample5,N005,GTAAGGAG,20,10,PI_lastname/researcher_lastname
+Sample6,N006,ACTGCATA,20,15,PI_lastname/researcher_lastname
+Sample7,N007,AAGGAGTA,20,10,PI_lastname/researcher_lastname
+Sample8,N008,CTAAGCCT,20,15,PI_lastname/researcher_lastname
+Sample9,N009,TGAACCTT,20,10,PI_lastname/researcher_lastname
+Sample10,N010,TGCTAAGT,20,10,PI_lastname/researcher_lastname

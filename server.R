@@ -1,7 +1,9 @@
 library(shiny)
 
 sg1 <- read.csv("shotgun_examplesheet.csv", header=T)
+sg2 <- read.csv("shotgun_examplesheet.csv", quote="")
 amp1 <- read.csv("dbcamplicon_examplesheet.csv", header=T)
+amp2 <- read.csv("dbcamplicon_examplesheet.csv", quote="")
 abcBarcodes <- readLines(con="clientplate.barcodelocations.csv", warn=F)
 
 shinyServer(function(input, output) {
@@ -18,6 +20,16 @@ shinyServer(function(input, output) {
                                         content= function(file){
                                          writeLines(abcBarcodes, con=file)
                                         })
+  
+  output$blank.dbc <- downloadHandler("AmpliconsSheet.csv",
+                                        content=function(file){
+                                          write.csv(amp2, file)
+                                          })
+  
+  output$blank.sgun <- downloadHandler("ShotgunSheet.csv",
+                                       content = function(file){
+                                         write.csv(sg2, file)
+                                       })
   
   output$contents <- renderTable({
     
